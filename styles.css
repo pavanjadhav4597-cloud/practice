@@ -1,0 +1,76 @@
+/* ---------- Theme ---------- */
+:root{
+  --bg:#0b0d12;
+  --card:#121827;
+  --ink:#e7ecff;
+  --muted:#aab3cc;
+  --accent:#4f8cff;
+  --ring:rgba(79,140,255,.35);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;
+  color:var(--ink);
+  background:linear-gradient(180deg,#0b0d12,#0e1320);
+}
+
+/* ---------- Layout ---------- */
+.container{max-width:1000px;margin:0 auto;padding:24px}
+.section{padding:32px 0}
+.section.alt{background:rgba(255,255,255,.02);border-block:1px solid rgba(255,255,255,.06)}
+.grid-3{display:grid;gap:24px;grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:860px){.grid-3{grid-template-columns:1fr}}
+
+/* ---------- Header ---------- */
+.site-header{
+  position:sticky;top:0;z-index:5;
+  backdrop-filter:saturate(140%) blur(8px);
+  background:rgba(11,13,18,.65);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.header-inner{display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.name{margin:0;font-size:2rem}
+.role{margin:.25rem 0 0;color:var(--muted)}
+.contact{display:flex;gap:14px;flex-wrap:wrap}
+.contact a{color:var(--ink);text-decoration:none;opacity:.9}
+.contact a:hover{opacity:1;color:var(--accent)}
+
+/* ---------- Job Card ---------- */
+.job{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:20px;margin:18px 0;
+  box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.job-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.job h3{margin:0}
+.meta{display:flex;gap:14px;color:var(--muted);font-size:.95rem;flex-wrap:wrap}
+.project{margin:.5rem 0 1rem}
+.bullets{margin:0;padding-left:18px;display:grid;gap:.45rem}
+.bullets li{line-height:1.5}
+
+/* ---------- Tags ---------- */
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.tags li{
+  padding:6px 10px;border-radius:999px;
+  background:linear-gradient(180deg, rgba(79,140,255,.16), rgba(79,140,255,.08));
+  border:1px solid rgba(79,140,255,.35);
+  color:#dbe7ff;font-weight:600;font-size:.9rem
+}
+
+/* ---------- CTA ---------- */
+.cta{display:flex;gap:14px;justify-content:center}
+.btn{
+  appearance:none;border:none;cursor:pointer;text-decoration:none;
+  padding:12px 18px;border-radius:12px;font-weight:700;
+  background:linear-gradient(180deg, var(--accent), #3a72ff); color:white;
+  box-shadow:0 10px 26px var(--ring)
+}
+.btn:hover{transform:translateY(-1px)}
+.btn.ghost{
+  background:transparent;color:var(--ink);
+  border:1px solid rgba(255,255,255,0.18)
+}
+
+/* ---------- Footer ---------- */
+.site-footer{border-top:1px solid rgba(255,255,255,.08)}
+.site-footer .container{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.small{font-size:.9rem}.muted{color:var(--muted)}
